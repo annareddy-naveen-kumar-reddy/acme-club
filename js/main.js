@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (joinForm) {
-    joinForm.addEventListener('submit', (e) => {
+    joinForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = joinForm.querySelector('button[type="submit"]');
       const originalText = submitBtn ? submitBtn.innerHTML : 'Submit Application';
@@ -297,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nameVal = document.getElementById('join-name')?.value.trim();
       const emailVal = document.getElementById('join-email')?.value.trim();
       const deptVal = document.getElementById('join-dept')?.value.trim();
+      const interestVal = document.getElementById('join-interest')?.value.trim();
 
       if (!nameVal || !emailVal || !deptVal) {
         showToast('Please fill in all required fields.');
@@ -313,16 +314,40 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // Smooth client-side confirmation
-      setTimeout(() => {
+      const payload = {
+        _subject: `New ACME Membership Application - ${nameVal}`,
+        "Applicant Name": nameVal,
+        "Applicant Email": emailVal,
+        "Department & Year": deptVal,
+        "Area of Interest": interestVal || "General ECE / Tech",
+        _template: "table"
+      };
+
+      try {
+        // Dispatch to both email inboxes simultaneously
+        await Promise.allSettled([
+          fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          }),
+          fetch("https://formsubmit.co/ajax/pravallikamsp@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          })
+        ]);
+      } catch (err) {
+        // Graceful handling
+      } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
         joinForm.reset();
         closeJoinModal();
-        showToast('Application submitted successfully! Welcome to ACME Club.');
-      }, 700);
+        showToast('Application submitted successfully! Details sent to ACME Club.');
+      }
     });
   }
 
@@ -409,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn ? submitBtn.innerHTML : 'Send Message';
@@ -433,15 +458,38 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // Smooth client-side confirmation
-      setTimeout(() => {
+      const payload = {
+        _subject: `New ACME Contact Inquiry from ${nameVal}`,
+        "Sender Name": nameVal,
+        "Sender Email": emailVal,
+        "Inquiry Message": messageVal,
+        _template: "table"
+      };
+
+      try {
+        // Dispatch to both email inboxes simultaneously
+        await Promise.allSettled([
+          fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          }),
+          fetch("https://formsubmit.co/ajax/pravallikamsp@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          })
+        ]);
+      } catch (err) {
+        // Graceful handling
+      } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
         contactForm.reset();
-        showToast('Thank you for reaching out! Your message has been received.');
-      }, 700);
+        showToast('Thank you for reaching out! Your message has been sent.');
+      }
     });
   }
 
