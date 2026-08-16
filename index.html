@@ -866,20 +866,24 @@
 
           <!-- Contact Form UI -->
           <div class="contact-form-panel reveal-on-scroll">
-            <form id="contact-form" novalidate>
+            <form id="contact-form" action="https://formsubmit.co/naveenkumarreddyannareddy@gmail.com" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Contact Message - ACME Club Website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
               <div class="form-group">
                 <label for="contact-name" class="form-label">Your Name</label>
-                <input type="text" id="contact-name" class="form-input" placeholder="[Enter your full name]" required>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="[Enter your full name]" required>
               </div>
 
               <div class="form-group">
                 <label for="contact-email" class="form-label">Your Email</label>
-                <input type="email" id="contact-email" class="form-input" placeholder="[name@student.edu]" required>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="[name@student.edu]" required>
               </div>
 
               <div class="form-group">
                 <label for="contact-message" class="form-label">Your Message</label>
-                <textarea id="contact-message" class="form-textarea" placeholder="[How can the ACME Club help you?]" required></textarea>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="[How can the ACME Club help you?]" required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
@@ -995,25 +999,29 @@
       <h3 id="join-modal-title" class="modal-title">Join ACME Club</h3>
       <p class="modal-subtitle">[Submit your student membership application below]</p>
 
-      <form id="join-club-form">
+      <form id="join-club-form" action="https://formsubmit.co/naveenkumarreddyannareddy@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Membership Application - ACME Club Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
         <div class="form-group">
           <label for="join-name" class="form-label">Full Name</label>
-          <input type="text" id="join-name" class="form-input" placeholder="[e.g. Alex Johnson]" required>
+          <input type="text" id="join-name" name="name" class="form-input" placeholder="[e.g. Alex Johnson]" required>
         </div>
 
         <div class="form-group">
           <label for="join-email" class="form-label">College Email ID</label>
-          <input type="email" id="join-email" class="form-input" placeholder="[e.g. alex@student.edu]" required>
+          <input type="email" id="join-email" name="email" class="form-input" placeholder="[e.g. alex@student.edu]" required>
         </div>
 
         <div class="form-group">
           <label for="join-dept" class="form-label">Department & Year</label>
-          <input type="text" id="join-dept" class="form-input" placeholder="[e.g. Computer Science - Year 2]" required>
+          <input type="text" id="join-dept" name="department_and_year" class="form-input" placeholder="[e.g. Computer Science - Year 2]" required>
         </div>
 
         <div class="form-group">
           <label for="join-interest" class="form-label">Area of Interest</label>
-          <input type="text" id="join-interest" class="form-input" placeholder="[e.g. Web Dev, AI/ML, Design, Event Management]" required>
+          <input type="text" id="join-interest" name="area_of_interest" class="form-input" placeholder="[e.g. Web Dev, AI/ML, Design, Event Management]" required>
         </div>
 
         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: var(--space-md);">
