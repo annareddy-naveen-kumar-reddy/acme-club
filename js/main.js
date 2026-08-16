@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const win = window.open(gmailUrl, '_blank');
-      if (!win) {
+      if (!win || win.closed || typeof win.closed === 'undefined') {
         window.location.href = mailtoUrl;
       }
     } catch (e) {
