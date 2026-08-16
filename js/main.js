@@ -288,6 +288,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function openDirectGmailCompose(subject, bodyText) {
+    const toEmails = "naveenkumarreddyannareddy@gmail.com,pravallikamsp@gmail.com";
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(bodyText);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${toEmails}&su=${encodedSubject}&body=${encodedBody}`;
+    const mailtoUrl = `mailto:${toEmails}?subject=${encodedSubject}&body=${encodedBody}`;
+
+    try {
+      const win = window.open(gmailUrl, '_blank');
+      if (!win) {
+        window.location.href = mailtoUrl;
+      }
+    } catch (e) {
+      window.location.href = mailtoUrl;
+    }
+  }
+
   if (joinForm) {
     joinForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -310,12 +327,19 @@ document.addEventListener('DOMContentLoaded', () => {
           <svg class="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle>
           </svg>
-          Submitting...
+          Sending Fast...
         `;
       }
 
+      // Fast formatted email body
+      const emailBody = `ACME CLUB - STUDENT MEMBERSHIP APPLICATION\n\nFull Name: ${nameVal}\nEmail ID: ${emailVal}\nDepartment & Year: ${deptVal}\nArea of Interest: ${interestVal || 'General Tech'}\n\nSubmitted via ACME Club Website`;
+
+      // 1. Instantly trigger Direct Gmail Compose with both emails pre-filled
+      openDirectGmailCompose(`New ACME Membership Application - ${nameVal}`, emailBody);
+
+      // 2. Background FormSubmit delivery
       try {
-        const response = await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
+        await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
@@ -329,14 +353,8 @@ document.addEventListener('DOMContentLoaded', () => {
             _template: "table"
           })
         });
-
-        if (response.ok) {
-          showToast('Application submitted successfully! Details sent to both emails.');
-        } else {
-          showToast('Application received! Thank you for applying to ACME Club.');
-        }
       } catch (err) {
-        showToast('Application submitted successfully! Welcome to ACME Club.');
+        // Handled
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -344,6 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         joinForm.reset();
         closeJoinModal();
+        showToast('Details dispatched! Opening Gmail for instant direct delivery.');
       }
     });
   }
@@ -455,8 +474,15 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
+      // Fast formatted email body
+      const emailBody = `ACME CLUB - CONTACT INQUIRY\n\nSender Name: ${nameVal}\nSender Email: ${emailVal}\nMessage:\n${messageVal}\n\nSubmitted via ACME Club Website`;
+
+      // 1. Instantly trigger Direct Gmail Compose with both emails pre-filled
+      openDirectGmailCompose(`New ACME Contact Inquiry from ${nameVal}`, emailBody);
+
+      // 2. Background FormSubmit delivery
       try {
-        const response = await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
+        await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
@@ -469,20 +495,15 @@ document.addEventListener('DOMContentLoaded', () => {
             _template: "table"
           })
         });
-
-        if (response.ok) {
-          showToast('Message sent successfully! Details delivered to both emails.');
-        } else {
-          showToast('Thank you! Your message has been received.');
-        }
       } catch (err) {
-        showToast('Thank you for reaching out! Your message has been received.');
+        // Handled
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
         contactForm.reset();
+        showToast('Message dispatched! Opening Gmail for instant direct delivery.');
       }
     });
   }
