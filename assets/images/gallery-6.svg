@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="galGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#31101E" />
+      <stop offset="50%" stop-color="#4C0519" />
+      <stop offset="100%" stop-color="#881337" />
+    </linearGradient>
+    <linearGradient id="glowG6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#FB7185" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#galGrad6)" />
+  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG6)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
+  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(244, 63, 94, 0.08)" stroke="#F43F5E" stroke-width="1.5" />
+  
+  <!-- Trophy / Award Icon -->
+  <path d="M380 195 H420 V220 C420 232 410 240 400 240 C390 240 380 232 380 220 Z" fill="none" stroke="#FB7185" stroke-width="3" stroke-linejoin="round" />
+  <path d="M380 202 H372 C367 202 364 206 364 210 C364 218 371 223 380 224" stroke="#FB7185" stroke-width="2.5" fill="none" />
+  <path d="M420 202 H428 C433 202 436 206 436 210 C436 218 429 223 420 224" stroke="#FB7185" stroke-width="2.5" fill="none" />
+  <path d="M400 240 V255 M385 255 H415" stroke="#FB7185" stroke-width="3" stroke-linecap="round" />
+
+  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    [Annual Awards & Felicitation]
+  </text>
+  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#FB7185" text-anchor="middle" letter-spacing="1">
+    PHOTO PLACEHOLDER • RECOGNITIONS
+  </text>
+</svg>

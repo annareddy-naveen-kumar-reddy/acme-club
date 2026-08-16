@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="galGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022C22" />
+      <stop offset="50%" stop-color="#064E3B" />
+      <stop offset="100%" stop-color="#0F766E" />
+    </linearGradient>
+    <linearGradient id="glowG3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#galGrad3)" />
+  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG3)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
+  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(16, 185, 129, 0.08)" stroke="#10B981" stroke-width="1.5" />
+  
+  <!-- Project Showcase Icon -->
+  <rect x="365" y="195" width="70" height="55" rx="8" fill="none" stroke="#34D399" stroke-width="3" />
+  <line x1="380" y1="260" x2="420" y2="260" stroke="#34D399" stroke-width="3" stroke-linecap="round" />
+  <line x1="400" y1="250" x2="400" y2="260" stroke="#34D399" stroke-width="3" />
+
+  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    [Annual Project Expo]
+  </text>
+  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#34D399" text-anchor="middle" letter-spacing="1">
+    PHOTO PLACEHOLDER • HARDWARE & CLOUD
+  </text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E162B" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="accentGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FE" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#bgGrad1)" />
+  
+  <!-- Subtle grid lines -->
+  <g opacity="0.15" stroke="#FFFFFF" stroke-width="1">
+    <line x1="0" y1="90" x2="600" y2="90" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="270" x2="600" y2="270" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+  </g>
+
+  <!-- Central Innovation Graphic -->
+  <circle cx="300" cy="160" r="65" fill="none" stroke="url(#accentGrad1)" stroke-width="3" stroke-dasharray="8 6" opacity="0.8"/>
+  <circle cx="300" cy="160" r="48" fill="rgba(0, 210, 254, 0.08)" stroke="#00D2FE" stroke-width="1.5" />
+  
+  <!-- Code / Tech Icon -->
+  <path d="M285 145 L270 160 L285 175 M315 145 L330 160 L315 175 M305 140 L295 180" 
+        stroke="#00D2FE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Label Badge -->
+  <rect x="200" y="270" width="200" height="32" rx="16" fill="rgba(0, 210, 254, 0.12)" stroke="rgba(0, 210, 254, 0.3)" stroke-width="1" />
+  <text x="300" y="291" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#00D2FE" text-anchor="middle" letter-spacing="1.5">
+    [HACKATHON / WORKSHOP]
+  </text>
+</svg>

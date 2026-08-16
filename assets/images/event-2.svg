@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B" />
+      <stop offset="100%" stop-color="#1C2541" />
+    </linearGradient>
+    <linearGradient id="accentGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#bgGrad2)" />
+  
+  <!-- Geometric circuit lines -->
+  <g opacity="0.2" stroke="#8B5CF6" stroke-width="1.5">
+    <path d="M50 80 H250 L280 120 H550" fill="none" />
+    <path d="M50 280 H200 L240 240 H550" fill="none" />
+    <circle cx="250" cy="80" r="4" fill="#8B5CF6" />
+    <circle cx="240" cy="240" r="4" fill="#8B5CF6" />
+  </g>
+
+  <!-- Central Speaker/AI Graphic -->
+  <circle cx="300" cy="160" r="60" fill="rgba(139, 92, 246, 0.08)" stroke="url(#accentGrad2)" stroke-width="2" />
+  <circle cx="300" cy="160" r="42" fill="none" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="6 4" />
+  
+  <!-- AI / Brain / Mic Icon -->
+  <path d="M288 140 C288 133 293 128 300 128 C307 128 312 133 312 140 V160 C312 167 307 172 300 172 C293 172 288 167 288 160 Z" 
+        fill="#8B5CF6" opacity="0.9"/>
+  <path d="M280 155 C280 166 289 175 300 175 C311 175 320 166 320 155 M300 175 V190 M290 190 H310" 
+        stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+  <!-- Label Badge -->
+  <rect x="200" y="270" width="200" height="32" rx="16" fill="rgba(139, 92, 246, 0.15)" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1" />
+  <text x="300" y="291" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#A78BFA" text-anchor="middle" letter-spacing="1.5">
+    [TECH TALK / SEMINAR]
+  </text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="galGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B" />
+      <stop offset="50%" stop-color="#27272A" />
+      <stop offset="100%" stop-color="#3F3F46" />
+    </linearGradient>
+    <linearGradient id="glowG4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#galGrad4)" />
+  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG4)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
+  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(56, 189, 248, 0.08)" stroke="#38BDF8" stroke-width="1.5" />
+  
+  <!-- Keynote Speaker Icon -->
+  <circle cx="400" cy="210" r="22" fill="#38BDF8" opacity="0.8" />
+  <path d="M365 260 C365 240 380 234 400 234 C420 234 435 240 435 260 Z" fill="#38BDF8" opacity="0.8" />
+
+  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    [Industry Speaker Keynote]
+  </text>
+  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#38BDF8" text-anchor="middle" letter-spacing="1">
+    PHOTO PLACEHOLDER • AUDITORIUM
+  </text>
+</svg>

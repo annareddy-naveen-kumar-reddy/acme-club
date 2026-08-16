@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="avGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B" />
+      <stop offset="100%" stop-color="#27272A" />
+    </linearGradient>
+    <linearGradient id="ringGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#avGrad4)" />
+  <circle cx="100" cy="100" r="96" fill="none" stroke="url(#ringGrad4)" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+  
+  <!-- Silhouette -->
+  <circle cx="100" cy="80" r="32" fill="#38BDF8" opacity="0.3" />
+  <circle cx="100" cy="80" r="28" fill="#38BDF8" opacity="0.8" />
+  <path d="M48 165 C48 132 72 122 100 122 C128 122 152 132 152 165 Z" fill="#38BDF8" opacity="0.4" />
+  <path d="M54 165 C54 136 74 126 100 126 C126 126 146 136 146 165 Z" fill="#38BDF8" opacity="0.85" />
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="galGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="50%" stop-color="#312E81" />
+      <stop offset="100%" stop-color="#4338CA" />
+    </linearGradient>
+    <linearGradient id="glowG5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#galGrad5)" />
+  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG5)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
+  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(192, 132, 252, 0.08)" stroke="#C084FC" stroke-width="1.5" />
+  
+  <!-- Team Mentorship Icon -->
+  <circle cx="375" cy="210" r="18" fill="#C084FC" opacity="0.8" />
+  <circle cx="425" cy="210" r="18" fill="#818CF8" opacity="0.8" />
+  <path d="M350 255 C350 238 362 232 375 232 C388 232 400 238 400 255 Z" fill="#C084FC" opacity="0.8" />
+  <path d="M400 255 C400 238 412 232 425 232 C438 232 450 238 450 255 Z" fill="#818CF8" opacity="0.8" />
+
+  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    [Peer Mentorship & Collab]
+  </text>
+  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#C084FC" text-anchor="middle" letter-spacing="1">
+    PHOTO PLACEHOLDER • STUDY SESSIONS
+  </text>
+</svg>

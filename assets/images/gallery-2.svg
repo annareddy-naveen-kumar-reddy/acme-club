@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="galGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B" />
+      <stop offset="50%" stop-color="#1C2541" />
+      <stop offset="100%" stop-color="#3A506B" />
+    </linearGradient>
+    <linearGradient id="glowG2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#galGrad2)" />
+  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG2)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
+  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(99, 102, 241, 0.08)" stroke="#6366F1" stroke-width="1.5" />
+  
+  <!-- AI / Workshop Icon -->
+  <circle cx="400" cy="225" r="36" fill="none" stroke="#A78BFA" stroke-width="3" />
+  <path d="M375 225 H425 M400 200 V250" stroke="#A78BFA" stroke-width="2.5" />
+
+  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    [Hands-On AI Workshop]
+  </text>
+  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#A78BFA" text-anchor="middle" letter-spacing="1">
+    PHOTO PLACEHOLDER • LAB SESSION
+  </text>
+</svg>
