@@ -324,17 +324,17 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        // Dispatch to both email inboxes simultaneously
+        // Dispatch to both email inboxes simultaneously with mutual CC
         await Promise.allSettled([
           fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ ...payload, _cc: "pravallikamsp@gmail.com" })
           }),
           fetch("https://formsubmit.co/ajax/pravallikamsp@gmail.com", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ ...payload, _cc: "naveenkumarreddyannareddy@gmail.com" })
           })
         ]);
       } catch (err) {
@@ -467,17 +467,17 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        // Dispatch to both email inboxes simultaneously
+        // Dispatch to both email inboxes simultaneously with mutual CC
         await Promise.allSettled([
           fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ ...payload, _cc: "pravallikamsp@gmail.com" })
           }),
           fetch("https://formsubmit.co/ajax/pravallikamsp@gmail.com", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ ...payload, _cc: "naveenkumarreddyannareddy@gmail.com" })
           })
         ]);
       } catch (err) {
