@@ -288,23 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function openDirectGmailCompose(subject, bodyText) {
-    const toEmails = "naveenkumarreddyannareddy@gmail.com,pravallikamsp@gmail.com";
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(bodyText);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${toEmails}&su=${encodedSubject}&body=${encodedBody}`;
-    const mailtoUrl = `mailto:${toEmails}?subject=${encodedSubject}&body=${encodedBody}`;
-
-    try {
-      const win = window.open(gmailUrl, '_blank');
-      if (!win || win.closed || typeof win.closed === 'undefined') {
-        window.location.href = mailtoUrl;
-      }
-    } catch (e) {
-      window.location.href = mailtoUrl;
-    }
-  }
-
   if (joinForm) {
     joinForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -327,17 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <svg class="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle>
           </svg>
-          Sending Fast...
+          Submitting...
         `;
       }
 
-      // Fast formatted email body
-      const emailBody = `ACME CLUB - STUDENT MEMBERSHIP APPLICATION\n\nFull Name: ${nameVal}\nEmail ID: ${emailVal}\nDepartment & Year: ${deptVal}\nArea of Interest: ${interestVal || 'General Tech'}\n\nSubmitted via ACME Club Website`;
-
-      // 1. Instantly trigger Direct Gmail Compose with both emails pre-filled
-      openDirectGmailCompose(`New ACME Membership Application - ${nameVal}`, emailBody);
-
-      // 2. Background FormSubmit delivery
       try {
         await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
           method: "POST",
@@ -362,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         joinForm.reset();
         closeJoinModal();
-        showToast('Details dispatched! Opening Gmail for instant direct delivery.');
+        showToast('Submitted successfully!');
       }
     });
   }
@@ -474,13 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // Fast formatted email body
-      const emailBody = `ACME CLUB - CONTACT INQUIRY\n\nSender Name: ${nameVal}\nSender Email: ${emailVal}\nMessage:\n${messageVal}\n\nSubmitted via ACME Club Website`;
-
-      // 1. Instantly trigger Direct Gmail Compose with both emails pre-filled
-      openDirectGmailCompose(`New ACME Contact Inquiry from ${nameVal}`, emailBody);
-
-      // 2. Background FormSubmit delivery
       try {
         await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
           method: "POST",
@@ -503,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.innerHTML = originalText;
         }
         contactForm.reset();
-        showToast('Message dispatched! Opening Gmail for instant direct delivery.');
+        showToast('Submitted successfully!');
       }
     });
   }
