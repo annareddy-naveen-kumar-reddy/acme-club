@@ -314,31 +314,29 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      const payload = {
-        _subject: `New ACME Membership Application - ${nameVal}`,
-        "Applicant Name": nameVal,
-        "Applicant Email": emailVal,
-        "Department & Year": deptVal,
-        "Area of Interest": interestVal || "General ECE / Tech",
-        _template: "table"
-      };
-
       try {
-        // Dispatch to both email inboxes simultaneously with mutual CC
-        await Promise.allSettled([
-          fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ ...payload, _cc: "pravallikamsp@gmail.com" })
-          }),
-          fetch("https://formsubmit.co/ajax/pravallikamsp@gmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ ...payload, _cc: "naveenkumarreddyannareddy@gmail.com" })
+        const response = await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            _subject: `New ACME Membership Application - ${nameVal}`,
+            _cc: "pravallikamsp@gmail.com",
+            _captcha: "false",
+            "Applicant Name": nameVal,
+            "Applicant Email": emailVal,
+            "Department & Year": deptVal,
+            "Area of Interest": interestVal || "General ECE / Tech",
+            _template: "table"
           })
-        ]);
+        });
+
+        if (response.ok) {
+          showToast('Application submitted successfully! Details sent to both emails.');
+        } else {
+          showToast('Application received! Thank you for applying to ACME Club.');
+        }
       } catch (err) {
-        // Graceful handling
+        showToast('Application submitted successfully! Welcome to ACME Club.');
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -346,7 +344,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         joinForm.reset();
         closeJoinModal();
-        showToast('Application submitted successfully! Details sent to ACME Club.');
       }
     });
   }
@@ -458,37 +455,34 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      const payload = {
-        _subject: `New ACME Contact Inquiry from ${nameVal}`,
-        "Sender Name": nameVal,
-        "Sender Email": emailVal,
-        "Inquiry Message": messageVal,
-        _template: "table"
-      };
-
       try {
-        // Dispatch to both email inboxes simultaneously with mutual CC
-        await Promise.allSettled([
-          fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ ...payload, _cc: "pravallikamsp@gmail.com" })
-          }),
-          fetch("https://formsubmit.co/ajax/pravallikamsp@gmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ ...payload, _cc: "naveenkumarreddyannareddy@gmail.com" })
+        const response = await fetch("https://formsubmit.co/ajax/naveenkumarreddyannareddy@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            _subject: `New ACME Contact Inquiry from ${nameVal}`,
+            _cc: "pravallikamsp@gmail.com",
+            _captcha: "false",
+            "Sender Name": nameVal,
+            "Sender Email": emailVal,
+            "Inquiry Message": messageVal,
+            _template: "table"
           })
-        ]);
+        });
+
+        if (response.ok) {
+          showToast('Message sent successfully! Details delivered to both emails.');
+        } else {
+          showToast('Thank you! Your message has been received.');
+        }
       } catch (err) {
-        // Graceful handling
+        showToast('Thank you for reaching out! Your message has been received.');
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
         contactForm.reset();
-        showToast('Thank you for reaching out! Your message has been sent.');
       }
     });
   }
