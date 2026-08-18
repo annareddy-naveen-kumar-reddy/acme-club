@@ -482,6 +482,49 @@ body.nav-open {
   overflow: hidden;
 }
 
+/* Dynamic Ambient Cyber Aurora Glow Backdrops */
+.hero-section::before,
+.hero-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.38;
+  animation: floatAurora 14s ease-in-out infinite alternate;
+}
+
+.hero-section::before {
+  top: 8%;
+  left: 3%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 210, 254, 0.45), rgba(59, 130, 246, 0.15), transparent 70%);
+}
+
+.hero-section::after {
+  bottom: 12%;
+  right: 4%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), rgba(37, 117, 252, 0.15), transparent 70%);
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+
+@keyframes floatAurora {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -40px) scale(1.18);
+  }
+  100% {
+    transform: translate(-40px, 50px) scale(0.92);
+  }
+}
+
 .hero-canvas {
   position: absolute;
   top: 0;
