@@ -150,9 +150,17 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.02, rootMargin: '120px 0px 120px 0px' });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  revealElements.forEach(el => {
+    // If element is already in viewport, reveal immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 100) {
+      el.classList.add('revealed');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 
   /* ==========================================================================
      6. Highlights / Animated Statistics Counters
