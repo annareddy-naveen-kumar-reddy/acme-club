@@ -1125,6 +1125,33 @@ body.nav-open {
   transform: translateY(-2px);
 }
 
+/* Faculty Contact Phone Badge */
+.faculty-phone-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(0, 210, 254, 0.08);
+  border: 1px solid rgba(0, 210, 254, 0.3);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  margin-bottom: var(--space-sm);
+  transition: all var(--dur-fast) ease;
+}
+
+.faculty-phone-badge:hover {
+  background: rgba(0, 210, 254, 0.2);
+  border-color: var(--accent-cyan);
+  color: var(--text-white);
+  box-shadow: 0 0 12px rgba(0, 210, 254, 0.35);
+  transform: translateY(-2px);
+}
+
 /* Event Coordinators Box Inside Profile Card */
 .coordinators-inline-box {
   margin-top: var(--space-sm);
