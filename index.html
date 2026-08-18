@@ -123,17 +123,25 @@
       <div class="container hero-grid">
         <!-- Hero Content -->
         <div class="hero-content">
-          <!-- TOP ROW: Official Instagram Follow Badge -->
+          <!-- TOP ROW: Super Colorful & Highlighted Official Instagram Follow Badge -->
           <div class="reveal-on-scroll" style="margin-bottom: var(--space-sm);">
             <a href="https://www.instagram.com/svec_acme?igsh=MW5xNTMzZGxoazhuMw==" target="_blank" rel="noopener noreferrer" class="hero-instagram-top-pill" aria-label="Official ACME Club Instagram @svec_acme">
-              <span class="insta-top-icon">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </span>
-              <span class="insta-top-label">Follow <strong>@svec_acme</strong> on Instagram ↗</span>
+              <svg class="insta-colorful-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="instaRadialHero" cx="30%" cy="107%" r="100%">
+                    <stop offset="0%" stop-color="#fdf497" />
+                    <stop offset="10%" stop-color="#fdf497" />
+                    <stop offset="50%" stop-color="#fd5949" />
+                    <stop offset="70%" stop-color="#d6249f" />
+                    <stop offset="100%" stop-color="#285AEB" />
+                  </radialGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#instaRadialHero)" />
+                <rect x="5.5" y="5.5" width="13" height="13" rx="3.8" stroke="#ffffff" stroke-width="1.8" fill="none" />
+                <circle cx="12" cy="12" r="3.2" stroke="#ffffff" stroke-width="1.8" fill="none" />
+                <circle cx="15.5" cy="8.5" r="1.1" fill="#ffffff" />
+              </svg>
+              <span class="insta-top-label">Follow <span class="insta-gradient-handle">@svec_acme</span> on Instagram <span class="insta-arrow-glow">↗</span></span>
             </a>
           </div>
 
