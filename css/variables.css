@@ -1,58 +1,58 @@
 /* ==========================================================================
-   ACME CLUB - MODERN DESIGN SYSTEM VARIABLES
+   ACME CLUB - MODERN DESIGN SYSTEM VARIABLES (CLEAN WHITE THEME)
    ========================================================================== */
 
 :root {
-  /* Color Palette - Sophisticated Tech Dark Mode */
-  --bg-darkest: #050811;
-  --bg-primary: #080D1A;
-  --bg-secondary: #0E162B;
-  --bg-tertiary: #141F3D;
-  --bg-surface: rgba(14, 22, 43, 0.75);
-  --bg-surface-hover: rgba(22, 35, 66, 0.85);
-  --bg-card: rgba(18, 28, 54, 0.65);
-  --bg-card-hover: rgba(26, 40, 77, 0.8);
-  --bg-glass: rgba(10, 16, 31, 0.72);
-  --bg-glass-modal: rgba(8, 13, 26, 0.88);
+  /* Color Palette - Clean, Modern Light / White Theme */
+  --bg-darkest: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --bg-glass-modal: rgba(255, 255, 255, 0.98);
 
   /* Primary Brand & Accent Colors */
-  --accent-cyan: #00D2FE;
-  --accent-blue: #3B82F6;
-  --accent-indigo: #6366F1;
-  --accent-purple: #8B5CF6;
-  --accent-emerald: #10B981;
-  --accent-amber: #F59E0B;
-  --accent-rose: #F43F5E;
+  --accent-cyan: #0284c7;
+  --accent-blue: #2563eb;
+  --accent-indigo: #4f46e5;
+  --accent-purple: #7c3aed;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
+  --accent-rose: #e11d48;
 
   /* Gradients */
-  --grad-primary: linear-gradient(135deg, #00D2FE 0%, #3B82F6 50%, #6366F1 100%);
-  --grad-primary-hover: linear-gradient(135deg, #38BDF8 0%, #60A5FA 50%, #818CF8 100%);
-  --grad-glow: linear-gradient(135deg, rgba(0, 210, 254, 0.18) 0%, rgba(99, 102, 241, 0.18) 100%);
-  --grad-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --grad-border: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%);
-  --grad-hero-radial: radial-gradient(circle at 50% 30%, rgba(0, 210, 254, 0.12) 0%, rgba(99, 102, 241, 0.06) 45%, transparent 70%);
+  --grad-primary: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
+  --grad-primary-hover: linear-gradient(135deg, #0369a1 0%, #1d4ed8 50%, #4338ca 100%);
+  --grad-glow: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%);
+  --grad-card: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --grad-border: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  --grad-hero-radial: radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.06) 0%, rgba(79, 70, 229, 0.03) 45%, transparent 70%);
 
   /* Typography Colors */
-  --text-white: #FFFFFF;
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-dim: #475569;
-  --text-accent: #38BDF8;
+  --text-white: #0f172a;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+  --text-accent: #0284c7;
 
   /* Borders & Dividers */
-  --border-subtle: 1px solid rgba(255, 255, 255, 0.08);
-  --border-medium: 1px solid rgba(255, 255, 255, 0.14);
-  --border-accent: 1px solid rgba(0, 210, 254, 0.4);
-  --border-glow: 1px solid rgba(0, 210, 254, 0.6);
+  --border-subtle: 1px solid #e2e8f0;
+  --border-medium: 1px solid #cbd5e1;
+  --border-accent: 1px solid rgba(2, 132, 199, 0.35);
+  --border-glow: 1px solid rgba(2, 132, 199, 0.5);
 
   /* Shadows & Glows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55), 0 0 24px -4px rgba(0, 210, 254, 0.1);
-  --shadow-card-hover: 0 20px 40px -8px rgba(0, 0, 0, 0.6), 0 0 28px -4px rgba(0, 210, 254, 0.18);
-  --glow-cyan: 0 0 24px rgba(0, 210, 254, 0.3);
-  --glow-btn: 0 4px 20px rgba(0, 210, 254, 0.35);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 30px -4px rgba(0, 0, 0, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 16px 32px -4px rgba(15, 23, 42, 0.12), 0 0 20px rgba(2, 132, 199, 0.12);
+  --glow-cyan: 0 0 20px rgba(2, 132, 199, 0.25);
+  --glow-btn: 0 4px 16px rgba(2, 132, 199, 0.3);
 
   /* Typography */
   --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
