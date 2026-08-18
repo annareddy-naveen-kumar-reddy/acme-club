@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Gallery Category Filters (Instant Smooth Switching)
      ========================================================================== */
   const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
-  const galleryCards = document.querySelectorAll('.gallery-card');
+  const galleryCards = document.querySelectorAll('.gallery-profile-card, .gallery-card');
 
   if (galleryFilterBtns.length > 0 && galleryCards.length > 0) {
     galleryFilterBtns.forEach(btn => {

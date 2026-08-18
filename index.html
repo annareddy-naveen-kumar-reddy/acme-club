@@ -686,90 +686,160 @@
 
 
     <!-- ==========================================================================
-         7. GALLERY / MOMENTS SECTION
+         7. GALLERY / EVENT SHOWCASE PROFILES
          ========================================================================== -->
     <section id="gallery" class="section" aria-labelledby="gallery-heading">
       <div class="container">
         
         <header class="section-header reveal-on-scroll">
-          <span class="section-tag">CAMPUS MOMENTS</span>
-          <h2 id="gallery-heading" class="section-title">Club Gallery</h2>
-          <p class="section-subtitle">Highlights from our workshops, hackathons, and student innovations.</p>
+          <span class="section-tag">FLAGSHIP INITIATIVES &amp; EVENTS</span>
+          <h2 id="gallery-heading" class="section-title">Club Showcase &amp; Events</h2>
+          <p class="section-subtitle">Key technical domains, flagship competitions, and community programs organized by ACME Club.</p>
         </header>
 
         <!-- Category Filter Tabs -->
         <div class="gallery-filters reveal-on-scroll" role="tablist" aria-label="Gallery Categories">
-          <button type="button" class="gallery-filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="gallery-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Initiatives</button>
           <button type="button" class="gallery-filter-btn" data-filter="hackathons" role="tab" aria-selected="false">Hackathons</button>
           <button type="button" class="gallery-filter-btn" data-filter="workshops" role="tab" aria-selected="false">Workshops</button>
-          <button type="button" class="gallery-filter-btn" data-filter="events" role="tab" aria-selected="false">Events &amp; Expo</button>
+          <button type="button" class="gallery-filter-btn" data-filter="events" role="tab" aria-selected="false">Expos &amp; Keynotes</button>
         </div>
 
-        <!-- Gallery Photo Grid -->
+        <!-- Event Profiles Grid -->
         <div class="gallery-grid">
 
-          <!-- Photo 1: Official Emblem -->
-          <div class="gallery-card reveal-on-scroll" data-category="events" style="background: #ffffff;">
-            <img src="assets/acme-official-logo.png" alt="ACME Club Crest" style="object-fit: contain; padding: 18px;" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Official Insignia</span>
-              <h3 class="gallery-title">ACME Club Crest</h3>
+          <!-- Profile 1: ACME Club Emblem -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="all" style="--card-accent: #00d2fe;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(0, 210, 254, 0.12); color: #00d2fe;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #00d2fe; border-color: rgba(0, 210, 254, 0.3);">OFFICIAL CHAPTER</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">ACME Club Foundation</h3>
+              <p class="gallery-profile-desc">Association of Communication Majors and Enthusiasts, Department of ECE at Mohan Babu University.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#Dept_ECE</span>
+                <span class="gallery-tech-chip">#MohanBabuUniversity</span>
+                <span class="gallery-tech-chip">#StudentHub</span>
+              </div>
+            </div>
+          </article>
 
-          <!-- Photo 2: Hackathon -->
-          <div class="gallery-card reveal-on-scroll" data-category="hackathons">
-            <img src="assets/images/gallery-1.svg" alt="Hackathon Sprint" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Hackathon</span>
-              <h3 class="gallery-title">24-Hour Hackathon Sprint</h3>
+          <!-- Profile 2: Hackathon Sprint -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="hackathons" style="--card-accent: #3b82f6;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(59, 130, 246, 0.12); color: #3b82f6;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">FLAGSHIP HACKATHON</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">24-Hour Code &amp; Hardware Sprint</h3>
+              <p class="gallery-profile-desc">Intense overnight collaborative development sprint where student developers create working real-world products.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#24HrSprint</span>
+                <span class="gallery-tech-chip">#LivePitching</span>
+                <span class="gallery-tech-chip">#Mentorship</span>
+              </div>
+            </div>
+          </article>
 
-          <!-- Photo 3: AI Workshop -->
-          <div class="gallery-card reveal-on-scroll" data-category="workshops">
-            <img src="assets/images/gallery-2.svg" alt="Hands-On AI Workshop" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Workshop</span>
-              <h3 class="gallery-title">Hands-On AI Workshop</h3>
+          <!-- Profile 3: AI & Neural Systems Workshop -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="workshops" style="--card-accent: #a855f7;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(168, 85, 247, 0.12); color: #a855f7;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #a855f7; border-color: rgba(168, 85, 247, 0.3);">TECH WORKSHOP</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">Applied AI &amp; Embedded Systems</h3>
+              <p class="gallery-profile-desc">Comprehensive practical bootcamps covering neural networks, edge computer vision, and real-time microcontroller coding.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#MachineLearning</span>
+                <span class="gallery-tech-chip">#EdgeRobotics</span>
+                <span class="gallery-tech-chip">#HandsOnLabs</span>
+              </div>
+            </div>
+          </article>
 
-          <!-- Photo 4: Project Expo -->
-          <div class="gallery-card reveal-on-scroll" data-category="events">
-            <img src="assets/images/gallery-3.svg" alt="Annual Project Expo" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Exhibition</span>
-              <h3 class="gallery-title">Annual Project Expo</h3>
+          <!-- Profile 4: Project Expo -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="events" style="--card-accent: #10b981;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">ANNUAL EXPO</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">Hardware &amp; IoT Project Expo</h3>
+              <p class="gallery-profile-desc">Grand campus exhibition showcasing telemetry circuits, sensor networks, robotics, and semester capstones.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#IoTPrototypes</span>
+                <span class="gallery-tech-chip">#Telemetry</span>
+                <span class="gallery-tech-chip">#LiveDemo</span>
+              </div>
+            </div>
+          </article>
 
-          <!-- Photo 5: Keynote -->
-          <div class="gallery-card reveal-on-scroll" data-category="events">
-            <img src="assets/images/gallery-4.svg" alt="Industry Keynote" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Speaker Session</span>
-              <h3 class="gallery-title">Industry Speaker Keynote</h3>
+          <!-- Profile 5: Industry Keynote -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="events" style="--card-accent: #f59e0b;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">DISTINGUISHED SERIES</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">Industry Leadership Keynote</h3>
+              <p class="gallery-profile-desc">Fireside sessions with tech alumni, principal engineers, and startup founders offering strategic career insights.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#TechLeaders</span>
+                <span class="gallery-tech-chip">#CareerPathways</span>
+                <span class="gallery-tech-chip">#AlumniTalks</span>
+              </div>
+            </div>
+          </article>
 
-          <!-- Photo 6: Mentorship -->
-          <div class="gallery-card reveal-on-scroll" data-category="workshops">
-            <img src="assets/images/gallery-5.svg" alt="Peer Mentorship" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Mentorship</span>
-              <h3 class="gallery-title">Peer Mentorship &amp; Collab</h3>
+          <!-- Profile 6: Mentorship & Labs -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="workshops" style="--card-accent: #6366f1;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(99, 102, 241, 0.12); color: #6366f1;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #6366f1; border-color: rgba(99, 102, 241, 0.3);">MENTORSHIP</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">Peer Mentorship &amp; Code Labs</h3>
+              <p class="gallery-profile-desc">Peer-to-peer technical mentoring, collaborative code reviews, and continuous skill acceleration for students.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#PeerLearning</span>
+                <span class="gallery-tech-chip">#CodeReviews</span>
+                <span class="gallery-tech-chip">#OpenSource</span>
+              </div>
+            </div>
+          </article>
 
-          <!-- Photo 7: Awards -->
-          <div class="gallery-card reveal-on-scroll" data-category="events">
-            <img src="assets/images/gallery-6.svg" alt="Annual Awards" decoding="async">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Achievements</span>
-              <h3 class="gallery-title">Annual Awards &amp; Honors</h3>
+          <!-- Profile 7: Awards & Recognition -->
+          <article class="gallery-profile-card reveal-on-scroll" data-category="events" style="--card-accent: #fbbf24;">
+            <div class="gallery-profile-header">
+              <div class="gallery-icon-avatar" style="background: rgba(251, 191, 36, 0.12); color: #fbbf24;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <span class="gallery-badge-pill" style="color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">HONORS &amp; AWARDS</span>
             </div>
-          </div>
+            <div class="gallery-profile-body">
+              <h3 class="gallery-profile-title">Annual Excellence Felicitation</h3>
+              <p class="gallery-profile-desc">Annual honors ceremony celebrating outstanding project builders, hackathon champions, and active student coordinators.</p>
+              <div class="gallery-chips-row">
+                <span class="gallery-tech-chip">#ExcellenceAwards</span>
+                <span class="gallery-tech-chip">#StudentStars</span>
+                <span class="gallery-tech-chip">#AnnualCeremony</span>
+              </div>
+            </div>
+          </article>
 
         </div>
 
