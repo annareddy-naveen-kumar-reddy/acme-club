@@ -513,6 +513,58 @@ body.nav-open {
   max-width: 620px;
 }
 
+.hero-top-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.hero-instagram-top-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.95rem;
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.16), rgba(245, 96, 64, 0.12), rgba(76, 94, 235, 0.16));
+  border: 1px solid rgba(225, 48, 108, 0.55);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  transition: all var(--dur-normal) var(--ease-spring);
+  box-shadow: 0 0 16px rgba(225, 48, 108, 0.3);
+}
+
+.hero-instagram-top-pill:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.32), rgba(245, 96, 64, 0.28), rgba(76, 94, 235, 0.32));
+  border-color: #ff5e98;
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(225, 48, 108, 0.6);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.insta-top-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(214, 36, 159, 0.4);
+}
+
+.insta-top-label strong {
+  color: #ff85b3;
+  font-weight: 700;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -520,13 +572,12 @@ body.nav-open {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--accent-cyan);
   background: rgba(0, 210, 254, 0.08);
   border: 1px solid rgba(0, 210, 254, 0.28);
   padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
-  margin-bottom: var(--space-md);
 }
 
 .hero-badge-dot {
