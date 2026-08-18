@@ -567,6 +567,91 @@ body.nav-open {
   flex-wrap: wrap;
 }
 
+/* Hero Instagram Follow Badge */
+.hero-instagram-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(225, 48, 108, 0.35);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all var(--dur-normal) var(--ease-spring);
+  margin-top: var(--space-lg);
+}
+
+.hero-instagram-badge:hover {
+  background: rgba(225, 48, 108, 0.12);
+  border-color: rgba(225, 48, 108, 0.8);
+  box-shadow: 0 0 22px rgba(225, 48, 108, 0.4);
+  transform: translateY(-3px);
+}
+
+.insta-logo-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(214, 36, 159, 0.4);
+  flex-shrink: 0;
+}
+
+.insta-badge-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.insta-badge-sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.insta-badge-handle {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  transition: color var(--dur-fast) ease;
+}
+
+.hero-instagram-badge:hover .insta-badge-handle {
+  color: #ff5e98;
+}
+
+/* Navbar Instagram Button */
+.navbar-instagram-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: var(--border-subtle);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--dur-fast) ease;
+}
+
+.navbar-instagram-btn:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 14px rgba(214, 36, 159, 0.5);
+  transform: translateY(-2px) scale(1.05);
+}
+
 /* Hero Tech Innovation Visual Card */
 .hero-visual-container {
   display: flex;
