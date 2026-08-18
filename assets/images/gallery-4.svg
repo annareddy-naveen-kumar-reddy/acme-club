@@ -1,27 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
-    <linearGradient id="galGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#18181B" />
-      <stop offset="50%" stop-color="#27272A" />
-      <stop offset="100%" stop-color="#3F3F46" />
+    <linearGradient id="gal4Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f0f02" />
+      <stop offset="50%" stop-color="#3d1e05" />
+      <stop offset="100%" stop-color="#5a2e0a" />
     </linearGradient>
-    <linearGradient id="glowG4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="100%" stop-color="#818CF8" />
+    <linearGradient id="orangeNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
     </linearGradient>
+    <filter id="glow4" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="800" height="500" fill="url(#galGrad4)" />
-  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG4)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
-  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(56, 189, 248, 0.08)" stroke="#38BDF8" stroke-width="1.5" />
   
-  <!-- Keynote Speaker Icon -->
-  <circle cx="400" cy="210" r="22" fill="#38BDF8" opacity="0.8" />
-  <path d="M365 260 C365 240 380 234 400 234 C420 234 435 240 435 260 Z" fill="#38BDF8" opacity="0.8" />
+  <rect width="800" height="500" fill="url(#gal4Bg)" />
+  
+  <!-- Stage Light Beams -->
+  <g opacity="0.15">
+    <polygon points="100 0 250 500 150 500" fill="#f59e0b"/>
+    <polygon points="700 0 650 500 550 500" fill="#f59e0b"/>
+  </g>
 
-  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-    [Industry Speaker Keynote]
+  <!-- Ambient Glow Circles -->
+  <circle cx="400" cy="210" r="140" fill="none" stroke="url(#orangeNeon)" stroke-width="2" stroke-dasharray="10 8" opacity="0.7"/>
+  <circle cx="400" cy="210" r="85" fill="rgba(245, 158, 11, 0.1)" />
+
+  <!-- Podium / Microphone Card -->
+  <rect x="290" y="115" width="220" height="190" rx="20" fill="rgba(61, 30, 5, 0.85)" stroke="url(#orangeNeon)" stroke-width="2.5" filter="url(#glow4)"/>
+  
+  <!-- Microphone & Soundwave Graphic -->
+  <rect x="385" y="150" width="30" height="60" rx="15" fill="#f59e0b"/>
+  <path d="M370 180 A30 30 0 0 0 430 180" stroke="#f59e0b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <line x1="400" y1="210" x2="400" y2="245" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+  <line x1="380" y1="245" x2="420" y2="245" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Voice Waves -->
+  <path d="M350 170 A55 55 0 0 0 350 210" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M450 170 A55 55 0 0 1 450 210" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Title Badge -->
+  <rect x="220" y="340" width="360" height="46" rx="23" fill="rgba(245, 158, 11, 0.12)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5"/>
+  <text x="400" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">
+    INDUSTRY SPEAKER KEYNOTE
   </text>
-  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#38BDF8" text-anchor="middle" letter-spacing="1">
-    PHOTO PLACEHOLDER • AUDITORIUM
+  <text x="400" y="415" font-family="system-ui, monospace" font-size="13" font-weight="600" fill="#fbbf24" text-anchor="middle" letter-spacing="2">
+    TECH TALKS & GUEST LECTURES • ACME
   </text>
 </svg>

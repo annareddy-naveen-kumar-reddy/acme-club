@@ -1,27 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
-    <linearGradient id="galGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080D1A" />
-      <stop offset="50%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#1E293B" />
+    <linearGradient id="gal1Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#0c1731" />
+      <stop offset="100%" stop-color="#142850" />
     </linearGradient>
-    <linearGradient id="glowG1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="cyanNeon" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00D2FE" />
-      <stop offset="100%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#2575FC" />
     </linearGradient>
+    <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="800" height="500" fill="url(#galGrad1)" />
-  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG1)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
-  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(0, 210, 254, 0.06)" stroke="#00D2FE" stroke-width="1.5" />
   
-  <!-- Code Icon -->
-  <path d="M370 200 L340 225 L370 250 M430 200 L460 225 L430 250 M415 190 L385 260" 
-        stroke="#00D2FE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <rect width="800" height="500" fill="url(#gal1Bg)" />
+  
+  <!-- Circuit Grid Background Lines -->
+  <g opacity="0.15" stroke="#00D2FE" stroke-width="1.5">
+    <line x1="100" y1="0" x2="100" y2="500" stroke-dasharray="6 6"/>
+    <line x1="300" y1="0" x2="300" y2="500" stroke-dasharray="6 6"/>
+    <line x1="500" y1="0" x2="500" y2="500" stroke-dasharray="6 6"/>
+    <line x1="700" y1="0" x2="700" y2="500" stroke-dasharray="6 6"/>
+    <line x1="0" y1="120" x2="800" y2="120" stroke-dasharray="6 6"/>
+    <line x1="0" y1="260" x2="800" y2="260" stroke-dasharray="6 6"/>
+    <line x1="0" y1="380" x2="800" y2="380" stroke-dasharray="6 6"/>
+  </g>
 
-  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-    [Hackathon Sprint 2026]
+  <!-- Ambient Glow Circles -->
+  <circle cx="400" cy="220" r="150" fill="none" stroke="url(#cyanNeon)" stroke-width="2" stroke-dasharray="10 8" opacity="0.7"/>
+  <circle cx="400" cy="220" r="180" fill="none" stroke="url(#cyanNeon)" stroke-width="1" opacity="0.3"/>
+  <circle cx="400" cy="220" r="90" fill="rgba(0, 210, 254, 0.08)" />
+
+  <!-- Code / Laptop Terminal Graphic -->
+  <rect x="260" y="125" width="280" height="175" rx="16" fill="rgba(12, 23, 49, 0.85)" stroke="url(#cyanNeon)" stroke-width="2.5" filter="url(#glow1)"/>
+  
+  <!-- Terminal Window Bar -->
+  <rect x="260" y="125" width="280" height="32" rx="16" fill="rgba(0, 210, 254, 0.15)"/>
+  <circle cx="282" cy="141" r="5" fill="#ff5f56"/>
+  <circle cx="298" cy="141" r="5" fill="#ffbd2e"/>
+  <circle cx="314" cy="141" r="5" fill="#27c93f"/>
+  
+  <!-- Code Brackets Icon -->
+  <path d="M360 195 L325 220 L360 245" stroke="#00D2FE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M440 195 L475 220 L440 245" stroke="#00D2FE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M415 185 L385 255" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none" />
+
+  <!-- Title Badge -->
+  <rect x="250" y="340" width="300" height="46" rx="23" fill="rgba(0, 210, 254, 0.1)" stroke="rgba(0, 210, 254, 0.4)" stroke-width="1.5"/>
+  <text x="400" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">
+    HACKATHON SPRINT
   </text>
-  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#00D2FE" text-anchor="middle" letter-spacing="1">
-    PHOTO PLACEHOLDER • 24-HR BUILD
+  <text x="400" y="415" font-family="system-ui, monospace" font-size="13" font-weight="600" fill="#00D2FE" text-anchor="middle" letter-spacing="2">
+    24-HOUR COLLABORATIVE BUILD • ACME
   </text>
 </svg>

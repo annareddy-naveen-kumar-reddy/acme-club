@@ -1,28 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
-    <linearGradient id="galGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#022C22" />
-      <stop offset="50%" stop-color="#064E3B" />
-      <stop offset="100%" stop-color="#0F766E" />
+    <linearGradient id="gal3Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021f18" />
+      <stop offset="50%" stop-color="#06382b" />
+      <stop offset="100%" stop-color="#0d5440" />
     </linearGradient>
-    <linearGradient id="glowG3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10B981" />
-      <stop offset="100%" stop-color="#34D399" />
+    <linearGradient id="greenNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
     </linearGradient>
+    <filter id="glow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="800" height="500" fill="url(#galGrad3)" />
-  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG3)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
-  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(16, 185, 129, 0.08)" stroke="#10B981" stroke-width="1.5" />
   
-  <!-- Project Showcase Icon -->
-  <rect x="365" y="195" width="70" height="55" rx="8" fill="none" stroke="#34D399" stroke-width="3" />
-  <line x1="380" y1="260" x2="420" y2="260" stroke="#34D399" stroke-width="3" stroke-linecap="round" />
-  <line x1="400" y1="250" x2="400" y2="260" stroke="#34D399" stroke-width="3" />
+  <rect width="800" height="500" fill="url(#gal3Bg)" />
+  
+  <!-- Circuit Grid -->
+  <g opacity="0.18" stroke="#10b981" stroke-width="1.5">
+    <path d="M150 150 L250 150 L300 200 L300 300" fill="none"/>
+    <path d="M650 150 L550 150 L500 200 L500 300" fill="none"/>
+    <circle cx="150" cy="150" r="4" fill="#10b981"/>
+    <circle cx="650" cy="150" r="4" fill="#10b981"/>
+  </g>
 
-  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-    [Annual Project Expo]
+  <!-- Ambient Glow Circles -->
+  <circle cx="400" cy="210" r="140" fill="none" stroke="url(#greenNeon)" stroke-width="2" stroke-dasharray="8 6" opacity="0.7"/>
+  <circle cx="400" cy="210" r="85" fill="rgba(16, 185, 129, 0.1)" />
+
+  <!-- Hardware Project Display Card -->
+  <rect x="280" y="115" width="240" height="190" rx="20" fill="rgba(6, 56, 43, 0.85)" stroke="url(#greenNeon)" stroke-width="2.5" filter="url(#glow3)"/>
+  
+  <!-- Microcontroller / IoT Graphic -->
+  <rect x="330" y="150" width="140" height="110" rx="10" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2"/>
+  <circle cx="360" cy="180" r="10" fill="#34d399"/>
+  <circle cx="440" cy="180" r="10" fill="#06b6d4"/>
+  <line x1="350" y1="225" x2="450" y2="225" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+  <line x1="370" y1="240" x2="430" y2="240" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Title Badge -->
+  <rect x="230" y="340" width="340" height="46" rx="23" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.5"/>
+  <text x="400" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">
+    ANNUAL PROJECT EXPO
   </text>
-  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#34D399" text-anchor="middle" letter-spacing="1">
-    PHOTO PLACEHOLDER • HARDWARE & CLOUD
+  <text x="400" y="415" font-family="system-ui, monospace" font-size="13" font-weight="600" fill="#34d399" text-anchor="middle" letter-spacing="2">
+    INNOVATION & HARDWARE PROTOTYPES • ACME
   </text>
 </svg>

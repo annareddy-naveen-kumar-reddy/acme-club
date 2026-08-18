@@ -1,29 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
-    <linearGradient id="galGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E1B4B" />
-      <stop offset="50%" stop-color="#312E81" />
-      <stop offset="100%" stop-color="#4338CA" />
+    <linearGradient id="gal5Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1026" />
+      <stop offset="50%" stop-color="#141d45" />
+      <stop offset="100%" stop-color="#1e2c69" />
     </linearGradient>
-    <linearGradient id="glowG5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#818CF8" />
-      <stop offset="100%" stop-color="#C084FC" />
+    <linearGradient id="indigoNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#06b6d4" />
     </linearGradient>
+    <filter id="glow5" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="800" height="500" fill="url(#galGrad5)" />
-  <circle cx="400" cy="220" r="140" fill="none" stroke="url(#glowG5)" stroke-width="2" stroke-dasharray="8 6" opacity="0.6"/>
-  <rect x="250" y="140" width="300" height="170" rx="16" fill="rgba(192, 132, 252, 0.08)" stroke="#C084FC" stroke-width="1.5" />
   
-  <!-- Team Mentorship Icon -->
-  <circle cx="375" cy="210" r="18" fill="#C084FC" opacity="0.8" />
-  <circle cx="425" cy="210" r="18" fill="#818CF8" opacity="0.8" />
-  <path d="M350 255 C350 238 362 232 375 232 C388 232 400 238 400 255 Z" fill="#C084FC" opacity="0.8" />
-  <path d="M400 255 C400 238 412 232 425 232 C438 232 450 238 450 255 Z" fill="#818CF8" opacity="0.8" />
+  <rect width="800" height="500" fill="url(#gal5Bg)" />
+  
+  <!-- Collaborative Network Grid -->
+  <g opacity="0.18" stroke="#6366f1" stroke-width="1.5">
+    <circle cx="180" cy="180" r="30" fill="none"/>
+    <circle cx="620" cy="180" r="30" fill="none"/>
+    <line x1="210" y1="180" x2="320" y2="180"/>
+    <line x1="480" y1="180" x2="590" y2="180"/>
+  </g>
 
-  <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
-    [Peer Mentorship & Collab]
+  <!-- Ambient Glow Circles -->
+  <circle cx="400" cy="210" r="140" fill="none" stroke="url(#indigoNeon)" stroke-width="2" stroke-dasharray="10 8" opacity="0.7"/>
+  <circle cx="400" cy="210" r="85" fill="rgba(99, 102, 241, 0.1)" />
+
+  <!-- Mentorship Network Card -->
+  <rect x="280" y="115" width="240" height="190" rx="20" fill="rgba(20, 29, 69, 0.85)" stroke="url(#indigoNeon)" stroke-width="2.5" filter="url(#glow5)"/>
+  
+  <!-- Team & Mentorship Icon -->
+  <circle cx="360" cy="170" r="22" fill="#6366f1"/>
+  <path d="M330 230 C330 200, 390 200, 390 230" fill="#6366f1"/>
+  
+  <circle cx="440" cy="170" r="22" fill="#06b6d4"/>
+  <path d="M410 230 C410 200, 470 200, 470 230" fill="#06b6d4"/>
+  
+  <!-- Connecting Spark -->
+  <path d="M380 180 L420 180" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Title Badge -->
+  <rect x="220" y="340" width="360" height="46" rx="23" fill="rgba(99, 102, 241, 0.12)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1.5"/>
+  <text x="400" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">
+    PEER MENTORSHIP & COLLAB
   </text>
-  <text x="400" y="390" font-family="'Space Grotesk', monospace" font-size="14" font-weight="500" fill="#C084FC" text-anchor="middle" letter-spacing="1">
-    PHOTO PLACEHOLDER • STUDY SESSIONS
+  <text x="400" y="415" font-family="system-ui, monospace" font-size="13" font-weight="600" fill="#818cf8" text-anchor="middle" letter-spacing="2">
+    STUDENT SESSIONS & CODE REVIEWS • ACME
   </text>
 </svg>
