@@ -1,7 +1,7 @@
 /**
- * ACME CLUB - Next-Gen Interactive Cyber Aurora & Quantum Matrix Engine
- * Creates a mesmerizing, multi-layered connected neural network with
- * fiber-optic data pulses, glowing energy nodes, and interactive magnetic ripples.
+ * ACME CLUB - Dynamic Floating Crystal Bubbles & Interactive Luminescent Orbs Engine
+ * Creates a mesmerizing, vibrant floating bubble ecosystem with realistic glass refraction,
+ * pure white light reflections, organic buoyancy, and interactive cursor physics.
  */
 
 (function () {
@@ -17,178 +17,267 @@
   let isVisible = true;
   let time = 0;
 
-  // Modern Color Palettes for Nodes & Beams
-  const colors = [
-    { r: 0, g: 210, b: 254, hex: '#00d2fe' },   // Electric Cyan
-    { r: 59, g: 130, b: 246, hex: '#3b82f6' },  // Vibrant Blue
-    { r: 168, g: 85, b: 247, hex: '#a855f7' },  // Neon Purple
-    { r: 16, g: 185, b: 129, hex: '#10b981' },  // Emerald Green
-    { r: 245, g: 158, b: 11, hex: '#f59e0b' }   // Amber Gold
+  // Vibrant Bubble Palette with Crystal Highlights
+  const bubblePalettes = [
+    {
+      glow: 'rgba(0, 210, 254, 0.45)',
+      fillStart: 'rgba(0, 210, 254, 0.28)',
+      fillMid: 'rgba(37, 117, 252, 0.15)',
+      fillEnd: 'rgba(10, 25, 55, 0.05)',
+      rim: 'rgba(255, 255, 255, 0.85)',
+      accent: '#00d2fe'
+    },
+    {
+      glow: 'rgba(168, 85, 247, 0.45)',
+      fillStart: 'rgba(168, 85, 247, 0.28)',
+      fillMid: 'rgba(236, 72, 153, 0.15)',
+      fillEnd: 'rgba(25, 10, 45, 0.05)',
+      rim: 'rgba(255, 255, 255, 0.85)',
+      accent: '#a855f7'
+    },
+    {
+      glow: 'rgba(0, 245, 212, 0.45)',
+      fillStart: 'rgba(0, 245, 212, 0.28)',
+      fillMid: 'rgba(0, 187, 249, 0.15)',
+      fillEnd: 'rgba(5, 35, 40, 0.05)',
+      rim: 'rgba(255, 255, 255, 0.85)',
+      accent: '#00f5d4'
+    },
+    {
+      glow: 'rgba(59, 130, 246, 0.45)',
+      fillStart: 'rgba(59, 130, 246, 0.28)',
+      fillMid: 'rgba(99, 102, 241, 0.15)',
+      fillEnd: 'rgba(10, 20, 50, 0.05)',
+      rim: 'rgba(255, 255, 255, 0.9)',
+      accent: '#3b82f6'
+    },
+    {
+      glow: 'rgba(251, 191, 36, 0.4)',
+      fillStart: 'rgba(251, 191, 36, 0.25)',
+      fillMid: 'rgba(245, 158, 11, 0.12)',
+      fillEnd: 'rgba(35, 25, 5, 0.05)',
+      rim: 'rgba(255, 255, 255, 0.85)',
+      accent: '#fbbf24'
+    }
   ];
 
-  // Configuration
   const isMobile = window.innerWidth < 768;
   const config = {
-    nodeCount: isMobile ? 32 : 64,
-    dustCount: isMobile ? 25 : 50,
-    maxDistance: isMobile ? 110 : 160,
-    mouseRadius: isMobile ? 120 : 200,
-    speedMultiplier: 0.55
+    bubbleCount: isMobile ? 28 : 55,
+    microBubbleCount: isMobile ? 20 : 45,
+    mouseRepelRadius: isMobile ? 130 : 190
   };
 
   const mouse = {
     x: null,
     y: null,
-    targetX: null,
-    targetY: null,
     isHovering: false,
-    rippleRadius: 0,
-    maxRipple: 140
+    speed: 0,
+    lastX: null,
+    lastY: null
   };
 
-  let nodes = [];
-  let stardust = [];
-  let dataPulses = [];
+  let bubbles = [];
+  let microBubbles = [];
+  let burstParticles = [];
 
-  // Floating Stardust Class (Deep Background Layer)
-  class DustParticle {
-    constructor() {
-      this.reset();
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
+  // Main Floating Crystal Bubble Class
+  class CrystalBubble {
+    constructor(initRandomY = false) {
+      this.palette = bubblePalettes[Math.floor(Math.random() * bubblePalettes.length)];
+      this.reset(initRandomY);
     }
 
-    reset() {
+    reset(initRandomY = false) {
+      this.radius = Math.random() * 24 + 10; // Sizes between 10px and 34px
       this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.25;
-      this.vy = (Math.random() - 0.5) * 0.25;
-      this.size = Math.random() * 1.5 + 0.5;
-      this.alpha = Math.random() * 0.4 + 0.1;
-      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.y = initRandomY ? Math.random() * height : height + this.radius + Math.random() * 50;
+      
+      // Buoyancy speed: larger bubbles rise slightly faster
+      this.vy = -(Math.random() * 0.6 + 0.4 + (this.radius / 40) * 0.35);
+      this.vx = (Math.random() - 0.5) * 0.4;
+      
+      // Horizontal wobble oscillation
+      this.wobbleSpeed = Math.random() * 0.025 + 0.012;
+      this.wobblePhase = Math.random() * Math.PI * 2;
+      this.wobbleAmp = Math.random() * 1.4 + 0.6;
+      
+      // Breathing scale
+      this.breathSpeed = Math.random() * 0.02 + 0.01;
+      this.breathPhase = Math.random() * Math.PI * 2;
+      this.alpha = Math.random() * 0.3 + 0.7;
     }
 
     update() {
-      this.x += this.vx;
+      this.wobblePhase += this.wobbleSpeed;
+      this.breathPhase += this.breathSpeed;
+
+      // Natural rising and wobbling
       this.y += this.vy;
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-    }
+      this.x += this.vx + Math.sin(this.wobblePhase) * this.wobbleAmp * 0.3;
 
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.alpha})`;
-      ctx.fill();
-    }
-  }
-
-  // Quantum Node Class (Foreground Layer)
-  class QuantumNode {
-    constructor(index) {
-      this.index = index;
-      this.reset();
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.baseX = this.x;
-      this.baseY = this.y;
-    }
-
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * config.speedMultiplier;
-      this.vy = (Math.random() - 0.5) * config.speedMultiplier;
-      this.radius = Math.random() * 2.4 + 1.8;
-      this.color = colors[this.index % colors.length];
-      this.pulseSpeed = Math.random() * 0.03 + 0.015;
-      this.pulsePhase = Math.random() * Math.PI * 2;
-      this.alpha = Math.random() * 0.4 + 0.6;
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      // Soft boundary reflection
-      if (this.x < 15 || this.x > width - 15) this.vx *= -1;
-      if (this.y < 15 || this.y > height - 15) this.vy *= -1;
-
-      // Organic sine wave oscillation
-      this.pulsePhase += this.pulseSpeed;
-      const pulseGlow = Math.sin(this.pulsePhase) * 0.3;
-
-      // Interactive Mouse Repel & Magnetic Field
+      // Mouse Interaction: Smooth repulsion & bouncing
       if (mouse.isHovering && mouse.x !== null && mouse.y !== null) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
         const dist = Math.hypot(dx, dy);
 
-        if (dist < config.mouseRadius) {
-          const force = (config.mouseRadius - dist) / config.mouseRadius;
+        if (dist < config.mouseRepelRadius && dist > 0) {
+          const force = (config.mouseRepelRadius - dist) / config.mouseRepelRadius;
           const angle = Math.atan2(dy, dx);
           
-          // Smooth orbital magnetic distortion
-          this.x -= Math.cos(angle) * force * 3.5;
-          this.y -= Math.sin(angle) * force * 3.5;
+          this.x += Math.cos(angle) * force * 5;
+          this.y += Math.sin(angle) * force * 5;
         }
       }
+
+      // Reset when floating off the top
+      if (this.y < -this.radius * 2) {
+        this.reset(false);
+      }
+
+      // Wrap horizontal bounds smoothly
+      if (this.x < -this.radius) this.x = width + this.radius;
+      if (this.x > width + this.radius) this.x = -this.radius;
     }
 
     draw() {
-      const currentGlow = Math.max(0.2, this.alpha + Math.sin(this.pulsePhase) * 0.25);
-      
-      // Outer Radiant Halo
-      const gradient = ctx.createRadialGradient(
-        this.x, this.y, 0,
-        this.x, this.y, this.radius * 4.5
+      const currentRadius = this.radius * (1 + Math.sin(this.breathPhase) * 0.05);
+
+      ctx.save();
+      ctx.translate(this.x, this.y);
+
+      // 1. Soft Ambient Outer Halo Glow
+      const glowGrad = ctx.createRadialGradient(0, 0, currentRadius * 0.5, 0, 0, currentRadius * 2.2);
+      glowGrad.addColorStop(0, this.palette.glow);
+      glowGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.beginPath();
+      ctx.arc(0, 0, currentRadius * 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = glowGrad;
+      ctx.fill();
+
+      // 2. Glass Bubble Body (Iridescent Spherical Gradient)
+      const bodyGrad = ctx.createRadialGradient(
+        -currentRadius * 0.35, -currentRadius * 0.35, currentRadius * 0.1,
+        0, 0, currentRadius
       );
-      gradient.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${currentGlow * 0.7})`);
-      gradient.addColorStop(0.5, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${currentGlow * 0.2})`);
-      gradient.addColorStop(1, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0)`);
+      bodyGrad.addColorStop(0, 'rgba(255, 255, 255, 0.45)');
+      bodyGrad.addColorStop(0.3, this.palette.fillStart);
+      bodyGrad.addColorStop(0.7, this.palette.fillMid);
+      bodyGrad.addColorStop(1, this.palette.fillEnd);
 
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius * 4.5, 0, Math.PI * 2);
-      ctx.fillStyle = gradient;
+      ctx.arc(0, 0, currentRadius, 0, Math.PI * 2);
+      ctx.fillStyle = bodyGrad;
       ctx.fill();
 
-      // Solid Bright Center Core
+      // 3. Crisp Luminous White Rim / Border
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = '#FFFFFF';
-      ctx.shadowColor = this.color.hex;
-      ctx.shadowBlur = 12;
+      ctx.arc(0, 0, currentRadius, 0, Math.PI * 2);
+      ctx.strokeStyle = this.palette.rim;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // 4. White Primary Crescent Highlight (Top-Left Glass Reflection)
+      ctx.beginPath();
+      ctx.ellipse(
+        -currentRadius * 0.38,
+        -currentRadius * 0.38,
+        currentRadius * 0.35,
+        currentRadius * 0.18,
+        Math.PI / 4,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
       ctx.fill();
-      ctx.shadowBlur = 0;
+
+      // 5. White Secondary Subtle Backlight (Bottom-Right Reflection)
+      ctx.beginPath();
+      ctx.ellipse(
+        currentRadius * 0.35,
+        currentRadius * 0.35,
+        currentRadius * 0.22,
+        currentRadius * 0.1,
+        Math.PI / 4,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+      ctx.fill();
+
+      ctx.restore();
     }
   }
 
-  // Fiber-Optic Data Pulse Class (Traveling Laser Packets)
-  class DataPulse {
-    constructor(nodeA, nodeB) {
-      this.nodeA = nodeA;
-      this.nodeB = nodeB;
-      this.progress = 0;
-      this.speed = Math.random() * 0.015 + 0.008;
-      this.size = Math.random() * 2 + 2;
-      this.color = nodeA.color;
+  // Micro Shimmering Floating Bubbles (Background Layer)
+  class MicroBubble {
+    constructor(initRandomY = false) {
+      this.reset(initRandomY);
+    }
+
+    reset(initRandomY = false) {
+      this.x = Math.random() * width;
+      this.y = initRandomY ? Math.random() * height : height + 10 + Math.random() * 30;
+      this.radius = Math.random() * 3.5 + 1.5;
+      this.vy = -(Math.random() * 0.4 + 0.2);
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.alpha = Math.random() * 0.5 + 0.3;
+      this.color = Math.random() > 0.4 ? '#ffffff' : '#00d2fe';
     }
 
     update() {
-      this.progress += this.speed;
+      this.y += this.vy;
+      this.x += this.vx;
+
+      if (this.y < -10) this.reset(false);
+      if (this.x < -10) this.x = width + 10;
+      if (this.x > width + 10) this.x = -10;
     }
 
     draw() {
-      const x = this.nodeA.x + (this.nodeB.x - this.nodeA.x) * this.progress;
-      const y = this.nodeA.y + (this.nodeB.y - this.nodeA.y) * this.progress;
-
       ctx.beginPath();
-      ctx.arc(x, y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = '#FFFFFF';
-      ctx.shadowColor = this.color.hex;
-      ctx.shadowBlur = 10;
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.alpha;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 6;
       ctx.fill();
       ctx.shadowBlur = 0;
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  // Interactive Click Burst Spark Particles
+  class BurstSpark {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 4 + 1.5;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.radius = Math.random() * 3 + 1.5;
+      this.alpha = 1;
+      this.decay = Math.random() * 0.03 + 0.02;
+      this.color = bubblePalettes[Math.floor(Math.random() * bubblePalettes.length)].accent;
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vx *= 0.95;
+      this.vy *= 0.95;
+      this.alpha -= this.decay;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = Math.max(0, this.alpha);
+      ctx.fill();
+      ctx.globalAlpha = 1;
     }
   }
 
@@ -198,121 +287,69 @@
     height = canvas.height = parent.clientHeight;
 
     const mobileMode = width < 768;
-    config.nodeCount = mobileMode ? 32 : 64;
-    config.dustCount = mobileMode ? 25 : 50;
-    config.maxDistance = mobileMode ? 110 : 160;
+    config.bubbleCount = mobileMode ? 28 : 55;
+    config.microBubbleCount = mobileMode ? 20 : 45;
 
-    // Build Stardust
-    stardust = [];
-    for (let i = 0; i < config.dustCount; i++) {
-      stardust.push(new DustParticle());
+    // Create Bubbles distributed across the full viewport initially
+    bubbles = [];
+    for (let i = 0; i < config.bubbleCount; i++) {
+      bubbles.push(new CrystalBubble(true));
     }
 
-    // Build Nodes
-    nodes = [];
-    for (let i = 0; i < config.nodeCount; i++) {
-      nodes.push(new QuantumNode(i));
-    }
-
-    dataPulses = [];
-  }
-
-  function connectAndSpawnPulses() {
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const dist = Math.hypot(dx, dy);
-
-        if (dist < config.maxDistance) {
-          const factor = 1 - dist / config.maxDistance;
-          const alpha = factor * 0.38;
-
-          // Gradient Line between the two connected nodes
-          const lineGrad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
-          lineGrad.addColorStop(0, `rgba(${nodes[i].color.r}, ${nodes[i].color.g}, ${nodes[i].color.b}, ${alpha})`);
-          lineGrad.addColorStop(1, `rgba(${nodes[j].color.r}, ${nodes[j].color.g}, ${nodes[j].color.b}, ${alpha})`);
-
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = lineGrad;
-          ctx.lineWidth = factor * 1.6;
-          ctx.stroke();
-
-          // Random chance to spawn a traveling data pulse along this line
-          if (Math.random() < 0.0006 && dataPulses.length < 15) {
-            dataPulses.push(new DataPulse(nodes[i], nodes[j]));
-          }
-        }
-      }
-    }
-  }
-
-  function drawInteractiveRipples() {
-    if (mouse.isHovering && mouse.x !== null && mouse.y !== null) {
-      mouse.rippleRadius = (mouse.rippleRadius + 1.2) % mouse.maxRipple;
-      const rippleAlpha = Math.max(0, 1 - mouse.rippleRadius / mouse.maxRipple) * 0.25;
-
-      ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, mouse.rippleRadius, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(0, 210, 254, ${rippleAlpha})`;
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      // Soft ambient cursor glow
-      const cursorGlow = ctx.createRadialGradient(
-        mouse.x, mouse.y, 0,
-        mouse.x, mouse.y, 100
-      );
-      cursorGlow.addColorStop(0, 'rgba(0, 210, 254, 0.12)');
-      cursorGlow.addColorStop(0.5, 'rgba(168, 85, 247, 0.06)');
-      cursorGlow.addColorStop(1, 'rgba(0, 210, 254, 0)');
-
-      ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, 100, 0, Math.PI * 2);
-      ctx.fillStyle = cursorGlow;
-      ctx.fill();
+    // Create Micro Shimmer Bubbles
+    microBubbles = [];
+    for (let i = 0; i < config.microBubbleCount; i++) {
+      microBubbles.push(new MicroBubble(true));
     }
   }
 
   function animate() {
     if (!isVisible) return;
 
-    time += 0.01;
+    time += 0.015;
     ctx.clearRect(0, 0, width, height);
 
-    // 1. Draw Background Stardust Layer
-    for (let i = 0; i < stardust.length; i++) {
-      stardust[i].update();
-      stardust[i].draw();
+    // 1. Draw Background Micro Bubbles
+    for (let i = 0; i < microBubbles.length; i++) {
+      microBubbles[i].update();
+      microBubbles[i].draw();
     }
 
-    // 2. Draw Connected Matrix Links & Spawn Pulses
-    connectAndSpawnPulses();
+    // 2. Draw Floating Crystal Bubbles
+    for (let i = 0; i < bubbles.length; i++) {
+      bubbles[i].update();
+      bubbles[i].draw();
+    }
 
-    // 3. Update & Draw Data Pulses
-    for (let i = dataPulses.length - 1; i >= 0; i--) {
-      dataPulses[i].update();
-      dataPulses[i].draw();
-      if (dataPulses[i].progress >= 1) {
-        dataPulses.splice(i, 1);
+    // 3. Update & Draw Click Burst Particles
+    for (let i = burstParticles.length - 1; i >= 0; i--) {
+      burstParticles[i].update();
+      burstParticles[i].draw();
+      if (burstParticles[i].alpha <= 0) {
+        burstParticles.splice(i, 1);
       }
     }
 
-    // 4. Draw Foreground Quantum Nodes
-    for (let i = 0; i < nodes.length; i++) {
-      nodes[i].update();
-      nodes[i].draw();
-    }
+    // 4. Cursor Fluid Halo
+    if (mouse.isHovering && mouse.x !== null && mouse.y !== null) {
+      const cursorAura = ctx.createRadialGradient(
+        mouse.x, mouse.y, 0,
+        mouse.x, mouse.y, 90
+      );
+      cursorAura.addColorStop(0, 'rgba(0, 210, 254, 0.18)');
+      cursorAura.addColorStop(0.5, 'rgba(255, 255, 255, 0.08)');
+      cursorAura.addColorStop(1, 'rgba(0, 210, 254, 0)');
 
-    // 5. Draw Interactive Mouse Ripples & Aura
-    drawInteractiveRipples();
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 90, 0, Math.PI * 2);
+      ctx.fillStyle = cursorAura;
+      ctx.fill();
+    }
 
     animationFrameId = requestAnimationFrame(animate);
   }
 
-  // Interactive Event Listeners
+  // Interactive Events
   const heroSection = document.getElementById('home') || canvas.parentElement;
 
   heroSection.addEventListener('mousemove', (e) => {
@@ -326,6 +363,17 @@
     mouse.isHovering = false;
     mouse.x = null;
     mouse.y = null;
+  });
+
+  heroSection.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+
+    // Spawn shimmer bubble burst
+    for (let i = 0; i < 14; i++) {
+      burstParticles.push(new BurstSpark(clickX, clickY));
+    }
   });
 
   heroSection.addEventListener('touchmove', (e) => {
@@ -358,7 +406,7 @@
 
   observer.observe(heroSection);
 
-  // Smooth Debounced Resize
+  // Resize listener
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
@@ -367,7 +415,7 @@
     }, 120);
   });
 
-  // Start Canvas
+  // Initialize
   resize();
   animate();
 })();
