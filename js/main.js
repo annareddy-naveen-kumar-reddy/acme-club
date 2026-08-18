@@ -163,6 +163,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
+     Gallery Category Filters (Instant Smooth Switching)
+     ========================================================================== */
+  const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const galleryCards = document.querySelectorAll('.gallery-card');
+
+  if (galleryFilterBtns.length > 0 && galleryCards.length > 0) {
+    galleryFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        galleryCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter || category === 'all') {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 15);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 150);
+          }
+        });
+      });
+    });
+  }
+
+  /* ==========================================================================
      6. Highlights / Animated Statistics Counters
      ========================================================================== */
   const statsSection = document.getElementById('highlights');

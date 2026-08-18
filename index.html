@@ -57,6 +57,7 @@
           <li><a href="#events" class="nav-link">Events</a></li>
           <li><a href="#activities" class="nav-link">Activities</a></li>
           <li><a href="#team" class="nav-link">Team</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -97,6 +98,7 @@
         <li><a href="#events" class="mobile-nav-link">Events</a></li>
         <li><a href="#activities" class="mobile-nav-link">Activities</a></li>
         <li><a href="#team" class="mobile-nav-link">Team</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
         <li><a href="https://www.instagram.com/svec_acme?igsh=MW5xNTMzZGxoazhuMw==" target="_blank" rel="noopener noreferrer" class="mobile-nav-link" style="color: #ff5e98;">📸 Follow @svec_acme</a></li>
       </ul>
@@ -684,6 +686,120 @@
 
 
     <!-- ==========================================================================
+         7. GALLERY / MOMENTS SECTION
+         ========================================================================== -->
+    <section id="gallery" class="section" aria-labelledby="gallery-heading">
+      <div class="container">
+        
+        <header class="section-header reveal-on-scroll">
+          <span class="section-tag">CAMPUS MOMENTS &amp; TECH HIGHLIGHTS</span>
+          <h2 id="gallery-heading" class="section-title">Club Gallery</h2>
+          <p class="section-subtitle">Visual chronicles of technical sprints, hands-on workshops, exhibitions, and community achievements at ACME Club.</p>
+        </header>
+
+        <!-- Category Filter Tabs -->
+        <div class="gallery-filters reveal-on-scroll" role="tablist" aria-label="Gallery Categories">
+          <button type="button" class="gallery-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Highlights</button>
+          <button type="button" class="gallery-filter-btn" data-filter="hackathons" role="tab" aria-selected="false">Hackathons</button>
+          <button type="button" class="gallery-filter-btn" data-filter="workshops" role="tab" aria-selected="false">Workshops</button>
+          <button type="button" class="gallery-filter-btn" data-filter="exhibitions" role="tab" aria-selected="false">Exhibitions</button>
+          <button type="button" class="gallery-filter-btn" data-filter="keynotes" role="tab" aria-selected="false">Keynotes</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+
+          <!-- Card 1: Official Crest -->
+          <article class="gallery-card reveal-on-scroll" data-category="all">
+            <div class="gallery-card-banner" style="background: radial-gradient(circle, rgba(0, 210, 254, 0.15), rgba(8, 13, 26, 0.95)); padding: 1rem;">
+              <img src="assets/acme-official-logo.png" alt="Official ACME Club Insignia" style="object-fit: contain; width: 110px; height: 110px;">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">OFFICIAL INSIGNIA</span>
+              <h3 class="gallery-card-title">ACME Club Emblem</h3>
+              <p class="gallery-card-desc">The official identity of the Association of Communication Majors &amp; Enthusiasts, Mohan Babu University.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: 24-Hour Hackathon Sprint -->
+          <article class="gallery-card reveal-on-scroll" data-category="hackathons">
+            <div class="gallery-card-banner">
+              <img src="assets/images/gallery-1.svg" alt="Hackathon Sprint" decoding="async">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">HACKATHON SPRINT</span>
+              <h3 class="gallery-card-title">24-Hour Collaborative Build</h3>
+              <p class="gallery-card-desc">Intense overnight coding marathons where student teams build real-world software and hardware prototypes.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Hands-On AI Workshop -->
+          <article class="gallery-card reveal-on-scroll" data-category="workshops">
+            <div class="gallery-card-banner">
+              <img src="assets/images/gallery-2.svg" alt="Hands-On AI Workshop" decoding="async">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">TECH WORKSHOP</span>
+              <h3 class="gallery-card-title">AI &amp; Neural Computing</h3>
+              <p class="gallery-card-desc">Hands-on technical bootcamps diving deep into machine learning models, edge AI, and intelligent systems.</p>
+            </div>
+          </article>
+
+          <!-- Card 4: Annual Project Expo -->
+          <article class="gallery-card reveal-on-scroll" data-category="exhibitions">
+            <div class="gallery-card-banner">
+              <img src="assets/images/gallery-3.svg" alt="Annual Project Expo" decoding="async">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">TECH EXPO</span>
+              <h3 class="gallery-card-title">Annual Hardware &amp; IoT Expo</h3>
+              <p class="gallery-card-desc">Grand exhibition showcasing semester projects, robotics, telemetry circuits, and IoT devices.</p>
+            </div>
+          </article>
+
+          <!-- Card 5: Industry Keynote Session -->
+          <article class="gallery-card reveal-on-scroll" data-category="keynotes">
+            <div class="gallery-card-banner">
+              <img src="assets/images/gallery-4.svg" alt="Industry Keynote" decoding="async">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">SPEAKER SERIES</span>
+              <h3 class="gallery-card-title">Industry Leadership Keynote</h3>
+              <p class="gallery-card-desc">Fireside chats and tech insights from top industry architects, distinguished alumni, and tech founders.</p>
+            </div>
+          </article>
+
+          <!-- Card 6: Peer Mentorship & Code Reviews -->
+          <article class="gallery-card reveal-on-scroll" data-category="workshops">
+            <div class="gallery-card-banner">
+              <img src="assets/images/gallery-5.svg" alt="Peer Mentorship" decoding="async">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">MENTORSHIP</span>
+              <h3 class="gallery-card-title">Peer Mentorship &amp; Labs</h3>
+              <p class="gallery-card-desc">Senior-led guidance sessions, code optimization workshops, and collaborative open-source sprints.</p>
+            </div>
+          </article>
+
+          <!-- Card 7: Annual Awards & Felicitation -->
+          <article class="gallery-card reveal-on-scroll" data-category="exhibitions">
+            <div class="gallery-card-banner">
+              <img src="assets/images/gallery-6.svg" alt="Annual Awards" decoding="async">
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-tag">RECOGNITION</span>
+              <h3 class="gallery-card-title">Awards &amp; Student Honors</h3>
+              <p class="gallery-card-desc">Annual recognition ceremony honoring outstanding innovators, event leaders, and hackathon champions.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
          8. ACHIEVEMENTS / HIGHLIGHTS SECTION
          ========================================================================== -->
     <section id="highlights" class="section" aria-labelledby="highlights-heading">
@@ -899,6 +1015,7 @@
           <h3 class="footer-col-title">Community</h3>
           <ul class="footer-links">
             <li><a href="#team" class="footer-link">Core Team</a></li>
+            <li><a href="#gallery" class="footer-link">Gallery</a></li>
             <li><a href="#highlights" class="footer-link">Highlights</a></li>
             <li><a href="#contact" class="footer-link">Contact</a></li>
           </ul>
