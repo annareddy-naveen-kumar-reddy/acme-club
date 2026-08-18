@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
-    <linearGradient id="gal1Bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070c18" />
-      <stop offset="50%" stop-color="#0c1731" />
-      <stop offset="100%" stop-color="#142850" />
+    <linearGradient id="g1Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050813" />
+      <stop offset="50%" stop-color="#0a1329" />
+      <stop offset="100%" stop-color="#11224d" />
     </linearGradient>
-    <linearGradient id="cyanNeon" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00D2FE" />
-      <stop offset="100%" stop-color="#2575FC" />
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2fe" />
+      <stop offset="100%" stop-color="#2575fc" />
     </linearGradient>
     <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feGaussianBlur stdDeviation="10" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -18,44 +18,35 @@
     </filter>
   </defs>
   
-  <rect width="800" height="500" fill="url(#gal1Bg)" />
+  <rect width="800" height="500" fill="url(#g1Bg)" />
   
-  <!-- Circuit Grid Background Lines -->
-  <g opacity="0.15" stroke="#00D2FE" stroke-width="1.5">
-    <line x1="100" y1="0" x2="100" y2="500" stroke-dasharray="6 6"/>
-    <line x1="300" y1="0" x2="300" y2="500" stroke-dasharray="6 6"/>
-    <line x1="500" y1="0" x2="500" y2="500" stroke-dasharray="6 6"/>
-    <line x1="700" y1="0" x2="700" y2="500" stroke-dasharray="6 6"/>
-    <line x1="0" y1="120" x2="800" y2="120" stroke-dasharray="6 6"/>
-    <line x1="0" y1="260" x2="800" y2="260" stroke-dasharray="6 6"/>
-    <line x1="0" y1="380" x2="800" y2="380" stroke-dasharray="6 6"/>
+  <!-- Cyber Grid Lines -->
+  <g opacity="0.12" stroke="#00d2fe" stroke-width="1.5">
+    <line x1="160" y1="0" x2="160" y2="500" stroke-dasharray="8 6"/>
+    <line x1="320" y1="0" x2="320" y2="500" stroke-dasharray="8 6"/>
+    <line x1="480" y1="0" x2="480" y2="500" stroke-dasharray="8 6"/>
+    <line x1="640" y1="0" x2="640" y2="500" stroke-dasharray="8 6"/>
+    <line x1="0" y1="125" x2="800" y2="125" stroke-dasharray="8 6"/>
+    <line x1="0" y1="250" x2="800" y2="250" stroke-dasharray="8 6"/>
+    <line x1="0" y1="375" x2="800" y2="375" stroke-dasharray="8 6"/>
   </g>
 
-  <!-- Ambient Glow Circles -->
-  <circle cx="400" cy="220" r="150" fill="none" stroke="url(#cyanNeon)" stroke-width="2" stroke-dasharray="10 8" opacity="0.7"/>
-  <circle cx="400" cy="220" r="180" fill="none" stroke="url(#cyanNeon)" stroke-width="1" opacity="0.3"/>
-  <circle cx="400" cy="220" r="90" fill="rgba(0, 210, 254, 0.08)" />
+  <!-- Glowing Radial Orb -->
+  <circle cx="400" cy="250" r="180" fill="none" stroke="url(#cyanGrad)" stroke-width="2" stroke-dasharray="14 10" opacity="0.6"/>
+  <circle cx="400" cy="250" r="220" fill="none" stroke="url(#cyanGrad)" stroke-width="1" opacity="0.3"/>
+  <circle cx="400" cy="250" r="120" fill="rgba(0, 210, 254, 0.06)" filter="url(#glow1)"/>
 
-  <!-- Code / Laptop Terminal Graphic -->
-  <rect x="260" y="125" width="280" height="175" rx="16" fill="rgba(12, 23, 49, 0.85)" stroke="url(#cyanNeon)" stroke-width="2.5" filter="url(#glow1)"/>
+  <!-- Code / Laptop Terminal Art -->
+  <rect x="250" y="140" width="300" height="200" rx="20" fill="rgba(10, 19, 41, 0.9)" stroke="url(#cyanGrad)" stroke-width="2.5" filter="url(#glow1)"/>
   
-  <!-- Terminal Window Bar -->
-  <rect x="260" y="125" width="280" height="32" rx="16" fill="rgba(0, 210, 254, 0.15)"/>
-  <circle cx="282" cy="141" r="5" fill="#ff5f56"/>
-  <circle cx="298" cy="141" r="5" fill="#ffbd2e"/>
-  <circle cx="314" cy="141" r="5" fill="#27c93f"/>
-  
-  <!-- Code Brackets Icon -->
-  <path d="M360 195 L325 220 L360 245" stroke="#00D2FE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M440 195 L475 220 L440 245" stroke="#00D2FE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-  <path d="M415 185 L385 255" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" fill="none" />
+  <!-- Window Header -->
+  <rect x="250" y="140" width="300" height="38" rx="20" fill="rgba(0, 210, 254, 0.15)"/>
+  <circle cx="275" cy="159" r="6" fill="#ff5f56"/>
+  <circle cx="295" cy="159" r="6" fill="#ffbd2e"/>
+  <circle cx="315" cy="159" r="6" fill="#27c93f"/>
 
-  <!-- Title Badge -->
-  <rect x="250" y="340" width="300" height="46" rx="23" fill="rgba(0, 210, 254, 0.1)" stroke="rgba(0, 210, 254, 0.4)" stroke-width="1.5"/>
-  <text x="400" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">
-    HACKATHON SPRINT
-  </text>
-  <text x="400" y="415" font-family="system-ui, monospace" font-size="13" font-weight="600" fill="#00D2FE" text-anchor="middle" letter-spacing="2">
-    24-HOUR COLLABORATIVE BUILD • ACME
-  </text>
+  <!-- Code Brackets -->
+  <path d="M360 220 L320 250 L360 280" stroke="#00d2fe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M440 220 L480 250 L440 280" stroke="#00d2fe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <line x1="415" y1="205" x2="385" y2="295" stroke="#3b82f6" stroke-width="5" stroke-linecap="round" />
 </svg>

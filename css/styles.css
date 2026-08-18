@@ -1416,7 +1416,7 @@ body.nav-open {
 }
 
 /* ==========================================================================
-   7. GALLERY SECTION
+   7. GALLERY SECTION (Sleek Clean Photo Tiles)
    ========================================================================== */
 .gallery-filters {
   display: flex;
@@ -1434,7 +1434,7 @@ body.nav-open {
   background: rgba(255, 255, 255, 0.04);
   border: var(--border-subtle);
   color: var(--text-secondary);
-  padding: 0.5rem 1.2rem;
+  padding: 0.45rem 1.2rem;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all var(--dur-fast) ease;
@@ -1456,81 +1456,69 @@ body.nav-open {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
 }
 
 .gallery-card {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--bg-surface);
-  border: var(--border-medium);
-  min-height: 270px;
-  display: flex;
-  flex-direction: column;
+  background: #0b1120;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 230px;
+  cursor: pointer;
   transition: all var(--dur-normal) var(--ease-spring);
-  backdrop-filter: blur(16px);
 }
 
 .gallery-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px) scale(1.02);
   border-color: rgba(0, 210, 254, 0.5);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: 0 12px 30px rgba(0, 210, 254, 0.25);
 }
 
-.gallery-card-banner {
-  height: 155px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-card);
-}
-
-.gallery-card-banner img {
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform var(--dur-slow) var(--ease-smooth);
 }
 
-.gallery-card:hover .gallery-card-banner img {
-  transform: scale(1.06);
+.gallery-card:hover img {
+  transform: scale(1.08);
 }
 
-.gallery-card-body {
-  padding: var(--space-lg);
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(5, 8, 17, 0.92) 100%);
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  background: rgba(10, 15, 30, 0.95);
-  flex-grow: 1;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  justify-content: flex-end;
+  padding: 1.25rem;
+  transition: all var(--dur-fast) ease;
 }
 
-.gallery-card-tag {
+.gallery-card:hover .gallery-overlay {
+  background: linear-gradient(180deg, transparent 20%, rgba(5, 8, 17, 0.98) 100%);
+}
+
+.gallery-tag {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--accent-cyan);
+  font-size: 0.7rem;
   font-weight: 700;
+  color: var(--accent-cyan);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
 }
 
-.gallery-card-title {
+.gallery-title {
   font-size: var(--text-base);
   font-weight: 700;
-  color: var(--text-white);
+  color: #ffffff;
   line-height: 1.3;
-}
-
-.gallery-card-desc {
-  font-size: var(--text-xs);
-  color: var(--text-secondary);
-  line-height: 1.5;
 }
 
 /* ==========================================================================
