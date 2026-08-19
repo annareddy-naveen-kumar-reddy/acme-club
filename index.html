@@ -1122,28 +1122,33 @@
       </button>
 
       <h3 id="join-modal-title" class="modal-title">Join ACME Club</h3>
-      <p class="modal-subtitle">[Submit your student membership application below]</p>
+      <p class="modal-subtitle">Submit your student membership application below</p>
 
       <form id="join-club-form" onsubmit="return false;">
 
         <div class="form-group">
           <label for="join-name" class="form-label">Full Name</label>
-          <input type="text" id="join-name" name="Applicant_Name" class="form-input" placeholder="[e.g. Alex Johnson]" required>
+          <input type="text" id="join-name" name="Applicant_Name" class="form-input" placeholder="e.g. Alex Johnson" required>
         </div>
 
         <div class="form-group">
           <label for="join-email" class="form-label">College Email ID</label>
-          <input type="email" id="join-email" name="email" class="form-input" placeholder="[e.g. alex@student.edu]" required>
+          <input type="email" id="join-email" name="email" class="form-input" placeholder="e.g. alex@student.edu" required>
         </div>
 
         <div class="form-group">
-          <label for="join-dept" class="form-label">Department & Year</label>
-          <input type="text" id="join-dept" name="department_and_year" class="form-input" placeholder="[e.g. Computer Science - Year 2]" required>
+          <label for="join-phone" class="form-label">Mobile Number</label>
+          <input type="tel" id="join-phone" name="phone" class="form-input" placeholder="e.g. +91 9876543210" pattern="[0-9+ -]{10,15}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="join-dept" class="form-label">Department &amp; Year</label>
+          <input type="text" id="join-dept" name="department_and_year" class="form-input" placeholder="e.g. ECE - Year 2" required>
         </div>
 
         <div class="form-group">
           <label for="join-interest" class="form-label">Area of Interest</label>
-          <input type="text" id="join-interest" name="area_of_interest" class="form-input" placeholder="[e.g. Web Dev, AI/ML, Design, Event Management]" required>
+          <input type="text" id="join-interest" name="area_of_interest" class="form-input" placeholder="e.g. IoT, Embedded Systems, AI/ML, Robotics" required>
         </div>
 
         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: var(--space-md);">
@@ -1235,7 +1240,7 @@
 
 
   <!-- Application Scripts -->
-  <script src="js/canvas-tech.js?v=10.0"></script>
-  <script src="js/main.js?v=10.0"></script>
+  <script src="js/canvas-tech.js?v=12.0"></script>
+  <script src="js/main.js?v=12.0"></script>
 </body>
 </html>

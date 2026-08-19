@@ -338,10 +338,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const nameVal = document.getElementById('join-name')?.value.trim();
       const emailVal = document.getElementById('join-email')?.value.trim();
+      const phoneVal = document.getElementById('join-phone')?.value.trim();
       const deptVal = document.getElementById('join-dept')?.value.trim();
       const interestVal = document.getElementById('join-interest')?.value.trim();
 
-      if (!nameVal || !emailVal || !deptVal) {
+      if (!nameVal || !emailVal || !phoneVal || !deptVal) {
         showToast('Please fill in all required fields.');
         return;
       }
@@ -366,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
             _captcha: "false",
             "Applicant Name": nameVal,
             "Applicant Email": emailVal,
+            "Mobile Number": phoneVal,
             "Department & Year": deptVal,
             "Area of Interest": interestVal || "General ECE / Tech",
             _template: "table"
